@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置视口（移动web） -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 碰到ie系列的浏览器，按照最新ie的渲染方式去渲染 -->
+    <title>千百惠购物网站</title>
+
+    <!-- 引入默认样式 网易nec-->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 引入页面样式 -->
+    <link rel="stylesheet" href="./css/qbh.css">
+    <!-- 假设该文件中有导航小圆点的样式 -->
+    <!-- <link rel="stylesheet" href="./css/fullpage.css"> -->
+</head>
+
+<!-- transition需要触发（只能运动一次），animation不需要触发（可以运动无数次） -->
+
+<body>
+    <a href="javascript:;" class="shopping-center">
+        <img src="./image/shoppingcenter.png" alt="">
+    </a>
+
+    <div id="fullpage">
+        <!-- 第一屏 标题 -->
+        <div class="section qbh-title">
+            <img class="qbh-title-extra" src="./image/qbh-title-extra.png" alt="">
+            <!-- 跳动的沙发 -->
+            <img class="qbh-title-sofa" src="./image/qbh-title-sofa.png" alt="">
+            <!-- 网站名称 -->
+            <img class="qbh-title-name" src="./image/qbh-title-name.png" alt="">
+        </div>
+
+        <!-- 第二屏 商品列表 -->
+        <!-- 分析1：顶部有两句话，在同一个位置，先看到的a，后看到的b；它们是重合的，而且是绝对定位； -->
+        <!-- 分析2：在右侧的搜索1，先进入到电脑中间，再向右上角；沙发的图片从右下角定位，慢慢放大到中间 -->
+        <!-- 具体1：搜索2就是（搜索框带文字）图片，开始就在中间none；搜索1是两个东西，做成一个div，用空白搜索做背景，里面放文字沙发图片; -->
+        <!-- 具体2：注意，当这个div（搜索1）走到中间时，让他消失掉；这时让none的搜索2显示 -->
+        <!-- 具体3：这个搜索2图片，按照宽高缩放到右上角 -->
+        <!-- 具体4：当搜索2要向右上角运动时，同时沙发也要运动到中间放大 -->
+        <div class="section qbh-list">
+            <!-- 列表宣传语 -->
+            <img class="qbh-list-worda" src="./image/qbh-list-worda.png" alt="">
+            <img class="qbh-list-wordb" src="./image/qbh-list-wordb.png" alt="">
+
+            <!-- 所有的动画都是围绕这电脑这个div来做的，所在在这设置一个透明的div，把所有的元素包含起来 -->
+            <div class="qbh-list-computer">
+                <!-- 搜索 -->
+                <div class="qbh-list-search"> <!-- box+font是搜索1 -->
+                    <img class="qbh-list-search-font" src="./image/qbh-list-search-font.png" alt="">
+                </div>
+                <!-- 搜索2 -->
+                <img class="qbh-list-search-finish" src="./image/qbh-list-search-finish.png" alt="">
+                <!-- 沙发列表 -->
+                <img class="qbh-list-sofas" src="./image/qbh-list-sofas.png" alt="">
+                <!-- 掉下去的沙发 -->
+                <img class="qbh-list-sofa-pic" src="./image/qbh-list-sofa-pic.png" alt="">
+            </div>
+        </div>
+
+        <!-- 第三屏 选购 -->
+        <div class="section qbh-buy">
+            <div class="qbh-buy-main">
+
+                    <div class="qbh-buy-select">
+                        <img class="qbh-buy-choose-start" src="./image/qbh-buy-choose-start.gif" alt="">
+                        <img class="qbh-buy-choose-end" src="./image/qbh-buy-choose-end.gif" alt="">
+                        <img class="qbh-buy-cart-start" src="./image/qbh-buy-cart-start.gif" alt="">
+                        <img class="qbh-buy-cart-end" src="./image/qbh-buy-cart-end.gif" alt="">
+                    </div>
+                    <!-- 倾斜沙发 -->
+                    <img class="qbh-buy-rotate-sofa" src="./image/qbh-info-rotate-sofa.png" alt="">
+            </div>
+        </div>
+
+        <!-- 第四屏 填写信息 -->
+        <div class="section qbh-info">
+            <img class="qbh-info-cloud" src="./image/qbh-info-cloud.png" alt="">
+            <img class="qbh-info-worda" src="./image/qbh-info-worda.png" alt="">
+            <img class="qbh-info-wordb" src="./image/qbh-info-wordb.png" alt="">
+
+            <div class="qbh-info-cart-box">
+                <img class="qbh-info-rotate-sofa" src="./image/qbh-info-rotate-sofa.png" alt="">
+                <img class="qbh-info-cart" src="./image/qbh-info-cart.png" alt="">
+            </div>
+
+            <div class="qbh-info-address">
+                <img class="qbh-info-address-box" src="./image/qbh-info-address-box.png" alt="">
+                <img class="qbh-info-address-font" src="./image/qbh-info-address.png" alt="">
+            </div>
+        </div>
+
+        <!-- 第五屏 付款 -->
+        <div class="section qbh-payment">5</div>
+
+        <!-- 第六屏 送货 -->
+        <div class="section qbh-delivery">6</div>
+
+        <!-- 第七屏 评价 -->
+        <div class="section qbh-appraise">7</div>
+
+        <!-- 第八屏 购物 -->
+        <div class="section qbh-shopping">8</div>
+
+    </div>
+
+
+    <!-- 引入jQuery库 -->
+    <script src="./js/jquery.min.js"></script>
+    <!-- 引入fullPage.js -->
+    <script src="./js/jquery.fullPage.min.js"></script>
+    <!-- 引入easing.js 可选的 为了增强动画效果 -->
+    <script src="./js/jquery.easings.min.js"></script>
+    <!-- 引入页面的js -->
+    <script src="./js/qbh.js"></script>
+</body>
+
+</html>
