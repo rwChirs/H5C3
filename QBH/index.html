@@ -9,7 +9,7 @@
     <!-- 碰到ie系列的浏览器，按照最新ie的渲染方式去渲染 -->
     <title>千百惠购物网站</title>
 
-    <!-- 引入默认样式 网易nec-->
+    <!-- 引入默认样式 -->
     <link rel="stylesheet" href="./css/reset.css">
     <!-- 引入页面样式 -->
     <link rel="stylesheet" href="./css/qbh.css">
@@ -20,8 +20,13 @@
 <!-- transition需要触发（只能运动一次），animation不需要触发（可以运动无数次） -->
 
 <body>
+    <!-- 购物中心 -->
     <a href="javascript:;" class="shopping-center">
         <img src="./image/shoppingcenter.png" alt="">
+    </a>
+    <!-- 继续往下 -->
+    <a href="javascript:;" class="down">
+        <img src="./image/down.png" alt="">
     </a>
 
     <div id="fullpage">
@@ -49,7 +54,8 @@
             <!-- 所有的动画都是围绕这电脑这个div来做的，所在在这设置一个透明的div，把所有的元素包含起来 -->
             <div class="qbh-list-computer">
                 <!-- 搜索 -->
-                <div class="qbh-list-search"> <!-- box+font是搜索1 -->
+                <div class="qbh-list-search">
+                    <!-- box+font是搜索1 -->
                     <img class="qbh-list-search-font" src="./image/qbh-list-search-font.png" alt="">
                 </div>
                 <!-- 搜索2 -->
@@ -65,28 +71,32 @@
         <div class="section qbh-buy">
             <div class="qbh-buy-main">
 
-                    <div class="qbh-buy-select">
-                        <img class="qbh-buy-choose-start" src="./image/qbh-buy-choose-start.gif" alt="">
-                        <img class="qbh-buy-choose-end" src="./image/qbh-buy-choose-end.gif" alt="">
-                        <img class="qbh-buy-cart-start" src="./image/qbh-buy-cart-start.gif" alt="">
-                        <img class="qbh-buy-cart-end" src="./image/qbh-buy-cart-end.gif" alt="">
-                    </div>
-                    <!-- 倾斜沙发 -->
-                    <img class="qbh-buy-rotate-sofa" src="./image/qbh-info-rotate-sofa.png" alt="">
+                <div class="qbh-buy-select">
+                    <img class="qbh-buy-choose-start" src="./image/qbh-buy-choose-start.gif" alt="">
+                    <img class="qbh-buy-choose-end" src="./image/qbh-buy-choose-end.gif" alt="">
+                    <img class="qbh-buy-add-cart-start" src="./image/qbh-buy-add-cart-start.gif" alt="">
+                    <img class="qbh-buy-add-cart-end" src="./image/qbh-buy-add-cart-end.gif" alt="">
+                </div>
+                <!-- 倾斜沙发 -->
+                <img class="qbh-buy-rotate-sofa" src="./image/qbh-info-rotate-sofa.png" alt="">
+                <!-- 掉到这里的沙发 -->
+                <img class="qbh-buy-sofa-pic" src="./image/qbh-list-sofa-pic.png" alt="">
             </div>
         </div>
 
         <!-- 第四屏 填写信息 -->
         <div class="section qbh-info">
+            <!-- 云彩 -->
             <img class="qbh-info-cloud" src="./image/qbh-info-cloud.png" alt="">
+            <!-- 两组字切换 -->
             <img class="qbh-info-worda" src="./image/qbh-info-worda.png" alt="">
             <img class="qbh-info-wordb" src="./image/qbh-info-wordb.png" alt="">
-
+            <!-- 购物车 -->
             <div class="qbh-info-cart-box">
                 <img class="qbh-info-rotate-sofa" src="./image/qbh-info-rotate-sofa.png" alt="">
                 <img class="qbh-info-cart" src="./image/qbh-info-cart.png" alt="">
             </div>
-
+            <!-- 收获地址 -->
             <div class="qbh-info-address">
                 <img class="qbh-info-address-box" src="./image/qbh-info-address-box.png" alt="">
                 <img class="qbh-info-address-font" src="./image/qbh-info-address.png" alt="">
@@ -94,16 +104,84 @@
         </div>
 
         <!-- 第五屏 付款 -->
-        <div class="section qbh-payment">5</div>
+        <div class="section qbh-payment">
+            <img class="qbh-payment-font" src="./image/qbh-payment-font.png" alt="">
+
+            <!-- qbh-payment-left没有任何用处 只是用来分辨 模块的左边 -->
+            <div class="qbh-payment-left">
+                <!-- 账单 --> <!-- 开始也在银行卡里面隐藏的，沙发掉下来的时候，它（上运动）和隐藏的沙发（下运动）一起出现 -->
+                <img class="qbh-payment-bill" src="./image/qbh-payment-bill.png" alt="">
+                <!-- 银行卡 -->
+                <img class="qbh-payment-cards" src="./image/qbh-payment-cards.png" alt="">
+                <!-- 上面会往下掉一个沙发，这个沙发到银行卡遮挡的地方隐藏，然后本页本身隐藏的沙发，再向下运动一点 -->
+                <img class="qbh-payment-rotate-sofa-start" src="./image/qbh-info-rotate-sofa.png" alt="">
+                <img class="qbh-payment-rotate-sofa-end" src="./image/qbh-info-rotate-sofa.png" alt="">
+                <img class="qbh-payment-rotate-sofa-continue" src="./image/qbh-info-rotate-sofa.png" alt="">
+            </div>
+
+            <!-- qbh-payment-right没有任何用处 只是用来分辨 模块的右边 -->
+            <div class="qbh-payment-right">
+                <img class="qbh-payment-hands" src="./image/qbh-payment-hands.png" alt="">
+                <img class="qbh-payment-mouse-start" src="./image/qbh-payment-mouse-start.png" alt="">
+                <img class="qbh-payment-mouse-end" src="./image/qbh-payment-mouse-end.png" alt="">
+            </div>
+        </div>
 
         <!-- 第六屏 送货 -->
-        <div class="section qbh-delivery">6</div>
+        <div class="section qbh-delivery">
+            <!-- 云彩 -->
+            <img class="qbh-delivery-cloud-one" src="./image/qbh-delivery-cloud-one.png" alt="">
+            <img class="qbh-delivery-cloud-two" src="./image/qbh-delivery-cloud-two.png" alt="">
+
+            <!-- 箱子 -->
+            <img class="qbh-delivery-box" src="./image/qbh-delivery-box.png" alt="">
+            <!-- 卡车 -->
+            <img class="qbh-delivery-truck" src="./image/qbh-delivery-truck.png" alt="">
+            <!-- 快递员 -->
+            <img class="qbh-delivery-deliveryman" src="./image/qbh-delivery-deliveryman.png" alt="">
+            <!-- 门 -->
+            <img class="qbh-delivery-door" src="./image/qbh-delivery-door.png" alt="">
+            <!-- 买家 -->
+            <img class="qbh-delivery-buyer" src="./image/qbh-delivery-buyer.png" alt="">
+            <!-- 商家 -->
+            <img class="qbh-delivery-shangjia" src="./image/qbh-delivery-shangjia.png" alt="">
+            <!-- 买家地址 -->
+            <img class="qbh-delivery-truck-font" src="./image/qbh-delivery-truck-font.png" alt="">
+            <!-- 送货的开始标语 -->
+            <img class="qbh-delivery-font-start" src="./image/qbh-delivery-font-start.png" alt="">
+            <!-- 送货的结束标语 -->
+            <img class="qbh-delivery-font-end" src="./image/qbh-delivery-font-end.png" alt="">
+            <!-- 请收货字样 -->
+            <img class="qbh-delivery-shouhuo" src="./image/qbh-delivery-shouhuo.png" alt="">
+        </div>
 
         <!-- 第七屏 评价 -->
-        <div class="section qbh-appraise">7</div>
+        <div class="section qbh-appraise">
+
+            <div class="qbh-appraise-star">
+                <img src="./image/qbh-appraise-star.png" alt="">
+                <img src="./image/qbh-appraise-star.png" alt="">
+                <img src="./image/qbh-appraise-star.png" alt="">
+                <img src="./image/qbh-appraise-star.png" alt="">
+                <img src="./image/qbh-appraise-star.png" alt="">
+            </div>
+
+            <img class="qbh-appraise-haoping" src="./image/qbh-appraise-haoping.png" alt="">
+        </div>
 
         <!-- 第八屏 购物 -->
-        <div class="section qbh-shopping">8</div>
+        <div class="section qbh-shopping">
+            <a href="javascript:;" class="qbh-shopping-start-shopping">
+                <img src="./image/qbh-shopping-start-shopping.png" alt="">
+            </a>
+            <a href="javascript:;" class="qbh-shopping-again">
+                <img src="./image/qbh-shopping-again.png" alt="">
+            </a>
+
+            <img class="qbh-shopping-hands" src="./image/qbh-shopping-hands.png" alt="">
+
+            <img class="qbh-shopping-dong" src="./image/qbh-shopping-dong.gif" alt="">
+        </div>
 
     </div>
 
