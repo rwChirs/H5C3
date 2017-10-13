@@ -534,9 +534,15 @@ main {
 
 .guess .item p {
     width: 100%;
+    /* 让文字自动出现省略号 显示两行文字 */
+    
+    /*让文字显示两行*/
     overflow: hidden;
+    /* 让p标签变成伸缩容器 */
     display: -webkit-box;
+    /*类似于display:flex*/
     -webkit-box-orient: vertical;
+    /*类似于flex-direction*/
     -webkit-line-clamp:2;
 
     font-size: 13px;
