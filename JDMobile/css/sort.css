@@ -6,6 +6,7 @@ html,body {
 
 .jd-sort {
     width: 100%;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -20,9 +21,30 @@ header {
     background-size: 1px 44px;
     background-repeat: repeat-x;
 
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     box-sizing: border-box;
 }
+
+header .back-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 40px;
+    height: 44px;
+    padding: 10px 11px; /* 用content就必须设置padding，都是对content进行的操作 */
+    background-image: url(../image/jd-sprites.png);
+    background-size: 200px 200px;
+    background-position: -20px 2px;
+
+    /* 细看 */
+    /* 控制精灵图，让其中的图片，不因为宽高过大，而显示其他图片 */
+    background-origin: content-box;/* 使显示位置以中心圆点为基准 */
+    background-clip: content-box;  /* 使除了要显示的图片外的图片都隐藏 */
+
+    box-sizing: border-box;
+}
+
 
 header .search-box {
     width: 100%;
@@ -42,25 +64,6 @@ header .search-box input {
     box-sizing: border-box;
 }
 
-
-header .back-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 40px;
-    height: 44px;
-    padding: 10px 11px;
-    background-image: url(../image/jd-sprites.png);
-    background-size: 200px 200px;
-    background-position: -20px 2px;
-
-    /* 细看 */
-    background-origin: content-box;
-    background-clip: content-box;
-
-    box-sizing: border-box;
-}
 
 header .menu-icon {
     position: absolute;
@@ -113,6 +116,9 @@ main aside li {
     height: 50px;
     border-bottom: 1px solid #ccc;
     border-right: 1px solid #ccc;
+
+    box-sizing: border-box;
+
     text-align: center;
     line-height: 50px;
     font-size: 13px;
@@ -139,7 +145,7 @@ main article {
 
 }
 
-main article .hot-tuijian h2,hot-sale h2 {
+main article .hot-tuijian h2,.hot-sale h2 {
     font-size: 13px;
     color: #666;
 }
@@ -180,7 +186,7 @@ main article .hot-tuijian ul {
 .hot-sale ul li {
     float: left;
     width: 33.33333%;
-    padding: 0 10px;
+    padding: 0 5px;
     box-sizing: border-box;
 }
 
