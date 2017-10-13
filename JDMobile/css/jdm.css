@@ -446,13 +446,127 @@ main {
 }
 
 
+/* 品牌推荐 */
+.brand {
+    width: 100%;
+    background-color: #fff;
+}
+
+.brand ul {
+    width: 100%;
+    overflow: hidden;
+}
+
+.brand li {
+    width: 30%;
+    float: left;
+}
+
+.brand li:first-child {
+    width: 40%;
+}
 
 
+/* 猜你喜欢 */
+.guess {
+    width: 100%;
 
+    box-sizing: border-box;
 
+    background-color: #fff;
+}
 
+.guess .guess-top {
+    height: 34px;
+    width: 100%;
 
+    padding: 0 8px;
+    box-sizing: border-box;
+}
 
+.guess .guess-top h2 {
+    float: left;
+
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 34px;
+}
+
+.guess .guess-top .guess-login {
+    float: right;
+    line-height: 34px;
+    color: #c91523;
+
+    position: relative;
+    margin-right: 10px;
+}
+
+.guess .guess-top .guess-login:before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left:-24px;
+
+    width: 18px;
+    height: 18px;
+
+    background-image: url(../image/icon-login.png);
+    background-size: 18px 18px;
+}
+
+.guess .guess-bottom {
+    width: 100%;
+    overflow: hidden;
+}
+
+.guess .guess-bottom .item {
+    width: 50%;
+
+    float: left;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.guess .item > a {
+    display: block;
+    width: 100%;
+}
+
+.guess .item p {
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+
+    font-size: 13px;
+    line-height: 20px;
+    height: 40px;
+
+    margin-top: 8px;
+}
+
+.guess .item .price {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    margin-top: 6px;
+    padding-top: 8px;
+}
+
+.guess .item .price span {
+    color: #c91523;
+    font-size: 13px;
+
+    line-height: 22px;
+}
+
+.guess .item .see-like {
+    float: right;
+    color: #ccc;
+    border: 1px solid #ccc;
+    padding: 2px;
+    border-radius: 3px;
+}
 
 
 
