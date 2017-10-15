@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>K2H优惠活动首页</title>
+
+    <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="./css/normalize.css"> -->
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<!-- > 业务分析
+
+    K2H:
+      1.首先进入第一张图。第一张图有两个添加区域分别为:全场优惠和优惠券。
+      2.当用户点击全场优惠时。进入第三张图。添加全场优惠券的信息
+      3.当你点击规则说明。则会弹出遮罩层 用来说明一些规则。点击我知道了。遮罩隐藏
+      4.在第三张图中点击保存。则该页面回到第二张图。显示全场优惠券。
+> 所用技术
+
+    CSS预处理器-less
+    媒体查询
+    rem -->
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <a href="javascript:;">
+            <i></i>
+            <span>优惠活动</span>
+        </a>
+        
+    </header>
+
+    <!-- 内容 -->
+    <main>
+        <!-- 全场优惠 -->
+        <div class="all">
+
+            <div class="all-header">
+                <h2>全场优惠</h2>
+                <span class="quantity">0/1</span>
+            </div>
+
+            <div class="all-add">
+                <span>添加优惠</span>
+            </div>
+
+        </div>
+
+        <!-- 优惠券 -->
+        <div class="all">
+                
+            <div class="all-header">
+                <h2>优惠券</h2>
+                <span class="quantity">0/3</span>
+            </div>
+
+            <div class="all-add">
+                <span>添加优惠券</span>
+            </div>
+
+        </div>
+
+
+        <!-- footer -->
+        <div class="footer">
+            <h3>提示：</h3>
+            <p>1、买家下单时只可选择其一（全场优惠或优惠券</p>
+            <p>2、优惠券一旦设置后不可修改</p>
+        </div>
+
+    </main>
+
+
+
+</body>
+</html>
