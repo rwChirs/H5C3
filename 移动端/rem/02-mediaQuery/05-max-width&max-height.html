@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        p {
+            font-size: 10px;
+        }
+
+        /* 演示max-width(最大宽度==小于等于多宽)  和   max-height(最大高度==小于等于多高) */
+
+        /* @media screen and (max-width:350px){
+            body {
+                background-color: skyblue;
+            }
+        } */
+
+        @media screen and (max-height:600px){
+            body {
+                background-color: pink;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>小于等于 宽/高时，才会变成蓝色</p>
+</body>
+</html>

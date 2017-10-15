@@ -1,0 +1,67 @@
+/* 2.多行注释 多行注释是给用户或者想让人看到的注释 */
+.container h1 {
+  font-size: 25px;
+  color: #E45456;
+}
+.container p {
+  font-size: 25px;
+  color: #3C7949;
+}
+.container .myclass h1 {
+  font-size: 25px;
+  color: #E45456;
+}
+.container .myclass p {
+  font-size: 25px;
+  color: #3C7949;
+}
+a {
+  color: yellowgreen;
+}
+a:link {
+  color: black;
+}
+a:visited {
+  color: blue;
+}
+a:hover {
+  color: orange;
+}
+a:active {
+  color: pink;
+}
+a > b {
+  background-color: yellow;
+}
+.box {
+  font-size: 18px;
+  margin-top: 10px;
+  padding-bottom: 32px;
+  width: 8px;
+}
+a {
+  color: red;
+}
+a:link {
+  color: black;
+}
+a:visited {
+  color: hotpink;
+}
+a:hover {
+  color: purple;
+}
+a:active {
+  color: #fff;
+}
+aside,
+main {
+  font-size: 24px;
+  margin: 20px 30px 40px 50px;
+  padding: 10px;
+  height: 20px;
+}
+main {
+  color: #ccc;
+  background-color: #fff;
+}
