@@ -54,12 +54,23 @@
 			endX = touches.clientX;
 			endY = touches.clientY;
 
+
+			// console.time()  给控制台添加了一个定时器
+			console.time("timer"); //启动了一个计时开始
 			// 5. 判断起始点的坐标和终止点的坐标的差值是否小于5 如果小于则为点击 
 			if (Math.abs(endX - startX) < 5 && Math.abs(endY - startY) < 5 && (endTime- startTime) < 300) {
-				alert("Tap手势触发了!!!");
+				console.log("Tap手势触发了!!!");
 			}
 		})
 
+
+
+		// 为了验证click事件在移动端有200-300ms延迟 因此 给box添加一个click事件
+		box.addEventListener('click',function(){
+
+			console.timeEnd("timer");
+			console.log('click事件触发啦');
+		})
 
 	</script>
 </body>
