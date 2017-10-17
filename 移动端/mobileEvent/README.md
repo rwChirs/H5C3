@@ -40,9 +40,11 @@
 
   >  screenX/Y(不用 因为有兼容性) 
     相对于屏幕的坐标（谷歌下是相对于屏幕-火狐下是和clientX/Y是一样的）
+
+    
   
 #### 移动端手势介绍
-  ![移动端手势](./images/mobileGesture.jpg)
+  ![移动端手势](./image/mobileGesture.jpg)
 #### 手势封装
 
   >  tap手势:单击  判断起始点的坐标和终止点的坐标是否一致
@@ -62,7 +64,6 @@
 
       1.veiwport设置
       2.fastClick插件
-
 #### iScroll
 
   > 下载地址:https://github.com/cubiq/iscroll
@@ -74,7 +75,6 @@
     iScroll是一个高性能，资源占用少，无依赖，多平台的javascript滚动插件。
 
   > iScroll使用方法
-  
 #### zepto(重点)
   > zepto.js
 

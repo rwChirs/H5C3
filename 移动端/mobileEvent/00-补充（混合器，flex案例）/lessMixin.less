@@ -1,0 +1,42 @@
+// 以下都是对混合器有很强需求的
+// 1.  很多页面中都有hover效果 但是颜色不一样
+// 2.  clearfix
+// 3.  box-sizing
+// 4.  border-radius
+
+
+// 例如1（直接是混合器，没有参数）
+.boxSizing() { //box-sizing存在兼容性问题，这样写也很麻烦
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    box-sizing: border-box;
+}
+// 优化写法：
+.box {
+    .boxSizing();
+}
+
+
+
+
+// 例如2（有参数，没有默认参数）
+// 在某一个应用场景下 有三处地方都有这样的效果(3个圆角1一个不圆角) 但是圆角的大小不同
+.borderRadiusThree(@topleft,@topright,@bottomright) {
+    border-top-left-radius: @topleft;
+    border-top-right-radius: @topright;
+    border-bottom-right-radius: @bottomright;
+}
+// 优化写法：
+.box2 {
+    // 以下混合器必须传参数  不传参数会报错
+    .borderRadiusThree(5px, 6px, 8px);
+}
+
+
+
+// 例如3(有默认参数)
+.borderRadiusFour(@topleft:5px,@topright:5px,@bottomright:5px) {
+    border-top-left-radius: @topleft;
+    border-top-right-radius: @topright;
+    border-bottom-right-radius: @bottomright;
+}
