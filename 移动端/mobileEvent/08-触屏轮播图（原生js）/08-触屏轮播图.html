@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>触屏轮播图</title>
 
 
     <style>
@@ -20,19 +20,24 @@
             overflow: hidden;
         }
 
-        .carousel ul {
+        .carousel ul { /* 宽度并不知道 */
             position: relative;
             top: 0;
+
             margin: 0;
             padding: 0;
+
             list-style: none;
             /* width: 1000%; */
+            /* 3200px */
             overflow: hidden;
         }
 
         .carousel li {
             float: left;
-            /* width: 10%; */
+            /* width: 10%; */ 
+            /* 320px */
+            /* 宽度要和屏幕一样宽 */
         }
 
         .carousel a {
@@ -79,37 +84,37 @@
             var lastLi = ul.querySelector('li:last-child'); 
             
             // 声明变量
-            var aLi ,index=0 ,timer ;
+            var aLi, carouselWidth, index = 0, timer, startX, endX;
 
             // 1.把轮播图的布局写好
             function init(){
                 // 1.1 把第一个li添加到最后一个li后面
                 ul.appendChild(firstLi.cloneNode(true));
                 // 1.2 把最后一个li添加到第一个li前面
-                ul.insertBefore(lastLi.cloneNode(false));
+                ul.insertBefore(lastLi.cloneNode(true), firstLi);
                 // 1.3 获取li
                 aLi = document.querySelectorAll('li');
-                // 1.4 设置ul和li的宽度
+                // 1.4 设置(ul和li)的宽度
                 setWidth();
                 // 1.5 图片的显示序号有问题 因为第一个图片显示的应该是0 而不是7 因此调整
                 index --;
                 ul.style.left = index * carouselWidth + 'px';
 
-                // 1.6
+                // 1.6 让轮播图轮播起来的，调用
                 autoplay();
             }
 
             function setWidth(){
-                var carouselWidth = carousel.offsetWidth;
-                console.log(carouselWidth);
-                ul.style.width = carouselWidth * aLi.length + 'px';
+                carouselWidth = carousel.offsetWidth;
+                // console.log(carouselWidth); //320
+                ul.style.width = carouselWidth * aLi.length + 'px';//通过li的宽度设置ul的宽度
 
                 for(var i=0;i<aLi.length;i++){
                     aLi[i].style.width = carouselWidth + 'px';
                 }
             }
 
-            init();
+            // init();
             // 2.让轮播图轮播起来
             function autoplay(){
                 timer = setInterval(function(){
@@ -120,35 +125,38 @@
                 },1500)
             }
 
-            // 3.检测索引的变化 调整索引
-                // 3.1 给ul添加transitionEnd事件 当l过度完成的时候 去监听
+            // 3.检测索引的变化 调整索引（刚才调节了索引，所以需要做调整）
+                // 3.1 给ul添加transitionEnd事件 当ul过度完成的时候 去监听
                 ul.addEventListener('webkitTransitionEnd',function(){
-                    // console.log(1);
-                // 3.2 判断索引为0 的时候 让其索引为-8；
-                if(index == 0){
-                    index == -8;
-                }
-                // 3.3 判断索引为-9的时候 让其索引为-1；
-                if(index == -9){
-                    index = -1;
-                }
-                // 3.4 让ul的left值放生变化
-                ul.style.index * carouselWidth + 'px';
-                // 3.5 去除ul的过度效果
-                ul.style.transition = '';
+                    // console.log(1); //每次切屏的时候都会打印一次
+                    // 3.2 判断索引为0 的时候 让其索引为-8；
+                    if(index == 0){
+                        index == -8;
+                    }
+                    // 3.3 判断索引为-9的时候 让其索引为-1；
+                    if(index == -9){
+                        index = -1;
+                    }
+                    // 3.4 让ul的left值放生变化
+                    ul.style.left = index * carouselWidth + 'px';
+                    // 3.5 去除ul的过度效果 //7-0再到1的时候，会向左7654321，再从1开始；所以要去除这个效果
+                    ul.style.transition = ''; 
                 })
 
             // 4.用手指去控制轮播图
             // 4.1 声明变量 startX,endX
             // 4.2 给ul添加touchstart事件 获取起始点的x坐标
             ul.addEventListener('touchstart',function(e){
+                clearInterval(timer);
+
                 var touches = e.targetTouches[0];
 
                 startX = touches.clientX;
-                
             })
             // 4.3 给ul添加touchend事件 获取结束点的x坐标
             ul.addEventListener('touchend',function(e){
+                autoplay();
+
                 var touches = e.changedTouches[0];
                 endX = touches.clientX;
             
@@ -161,7 +169,7 @@
                 ul.style.transition = 'all 1s';
             })
 
-
+            init();
 
     </script>
 </body>
