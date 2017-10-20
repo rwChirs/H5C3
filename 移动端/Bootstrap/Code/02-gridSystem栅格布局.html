@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 栅格布局</title>
+
+    <!-- Bootstrap -->
+    <link href="./lib/css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <style>
+    
+        div[class^="col"] {
+            height: 50px;
+            line-height: 50px;
+            background-color: pink;
+            text-align: center;
+            box-shadow: 0 0 1px #000;
+        }
+
+    </style>
+
+</head>
+<!-- 响应式、移动设备优先的流式栅格系统 -->
+<!-- 随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。 -->
+<!-- 它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。 -->
+<!-- 栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中 -->
+
+<!-- 不同的设备展示不一样的布局，就需要用到栅格系统 -->
+<!-- 本质：媒体查询 -->
+<!-- 栅格布局就是通过人为的把屏幕分成12份（列） -->
+<!-- 先有行再有列 -->
+<!-- 假设在设计图上有一个元素 占1列 给div一个class col-md-1 -->
+
+<body>
+    <!-- 媒体查询：栅格系统把各种屏幕分成了 四类 -->
+    <!-- 1.超小屏幕（手机，<768px）   col-xs-*    *代表几列  *最大是12 -->
+    <!-- 2.小屏幕（平板，>=768px）  col-sm-*     -->
+    <!-- 3.中等屏幕（PC，>=992px） col-md-*     -->
+    <!-- 4.超大屏幕（>=1200px）  col-lg-*     -->
+
+    
+    <div class="container-fluid">
+
+        <!-- 行（row）必须包含在 .container（固定宽度）或 .container-fluid（100% 宽度）中 -->
+        <div class="row">
+            <!-- 内容应当放置于 列（column）内，且只有 列（column）可以作为行（row）的直接子元素 -->
+                <!-- 现在要12列 -->
+            <div class="col-md-1 col-xs-1">1</div>
+            <div class="col-md-1 col-xs-1">1</div>
+            <div class="col-md-1 col-xs-1">1</div>
+            <div class="col-md-1 col-xs-1">1</div>
+            <div class="col-md-1 col-xs-1">1</div>
+            <div class="col-md-1 col-xs-1">1</div>
+            <div class="col-md-1 col-xs-1">1</div>
+            <div class="col-md-1 col-xs-1">1</div>
+            <div class="col-md-1 col-xs-1">1</div>
+            <div class="col-md-1 col-xs-1">1</div>
+            <div class="col-md-1 col-xs-1">1</div>
+            <div class="col-md-1 col-xs-1">1</div>
+        </div>
+
+            <!-- 1行6列铺满 ,手机显示要两行，一个六个，所以每行3个，3*4-12 -->
+        <div class="row">
+            <div class="col-md-2 col-xs-4">2</div>
+            <div class="col-md-2 col-xs-4">2</div>
+            <div class="col-md-2 col-xs-4">2</div>
+            <div class="col-md-2 col-xs-4">2</div>
+            <div class="col-md-2 col-xs-4">2</div>
+            <div class="col-md-2 col-xs-4">2</div>
+        </div>
+
+            <!-- 1行4列铺满，手机要显示前3一行，后1一行 -->
+        <div class="row">
+            <div class="col-md-3 col-xs-4">3</div>
+            <div class="col-md-3 col-xs-4">3</div>
+            <div class="col-md-3 col-xs-4">3</div>
+            <div class="col-md-3 col-xs-12">3</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">4</div>
+            <div class="col-md-4">4</div>
+            <div class="col-md-4">4</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">6</div>
+            <div class="col-md-6">6</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">12</div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-7">7</div>
+            <!-- 可以显示 倍数不是12的 -->
+            <div class="col-md-6">6</div>
+            <!-- 多了就换行 -->
+        </div>
+
+
+
+
+
+
+        <!-- 列偏移: .col-*(xs、sm、md、lg)-offset-* 向右偏移的-->
+
+        <!-- 让第二个4到最右 -->
+        <div class="row">
+            <div class="col-md-4">4</div>
+            <div class="col-md-4 col-md-offset-4">4</div>
+        </div>
+
+
+        <!-- 列嵌套 -->
+        <!-- 因为我的东西占不了那么大的位置，所以嵌套一个 -->
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-6">6</div>
+                <div class="col-md-6">6</div>
+            </div>
+        </div>
+
+
+        <!-- 列顺序（列排序） -->
+        <!-- 9+3的排列，push推向右，pull拉回向左 -->
+        <div class="row">
+            <div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3</div>
+            <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+    <!-- 引入jquery库 -->
+    <script src="./js/jQuery.min.js"></script>
+    <!-- 引入bootstrap.js 各个插件库 -->
+    <script src="./lib/js/bootstrap.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+1.安装node
+2.去github下载zepto-master.zip
+3.把zepto-master.zip解压 进入有很多文件的文件夹中
+4.按住键盘shift再右键 打开命令行窗口
+5.输入命令:npm install 
+6.定制
+            6.1 找到package.json同级文件中的make文件的41行
+            6.2 如果你需要什么模块 就把名称添加进入 
+            6.3 执行npm run-script dist
+            6.4 如果有问题 查看zepto中的readme.md

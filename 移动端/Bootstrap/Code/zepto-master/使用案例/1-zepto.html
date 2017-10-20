@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>zepto获取元素（动画）</title>
+</head>
+<body>
+  <div class="box"></div>
+  
+  <script src="./src/zepto.js"></script>
+  <script src="./src/event.js"></script>
+  <script src="./src/ajax.js"></script>
+  <script src="./src/form.js"></script>
+  <script src="./src/ie.js"></script>
+  <script src="./src/touch.js"></script>
+  <script src="./src/fx.js"></script>
+  <script>
+    // 功能: 设置box的样式 宽度 200 高度为200 border: 1px solid #ccc;
+
+    // 获取元素添加样式
+    $('.box').css({
+      width: 200,
+      height: 200,
+      border: '1px solid #ccc',
+      backgroundColor: 'red'
+    })
+    
+
+    /*
+    $('.box').tap(function(){ //单击
+      $(this).animate({
+        'backgroundColor':'hotpink'
+      })
+    })
+    */
+
+
+    /*
+    $('.box').doubleTap(function(){ //双击
+      $(this).animate({
+        'backgroundColor':'hotpink'
+      })
+    })
+    */
+
+
+
+    /*
+    $('.box').swipe(function(){  //当元素被划过时触发（任意方向）
+      $(this).animate({
+        'backgroundColor':'hotpink'
+      })
+    })
+    */
+
+
+
+    /*
+    $('.box').swipeRight(function(){  //当元素被划过时触发（右滑）
+      $(this).animate({
+        'backgroundColor':'blue'
+      })
+    })
+    */
+    
+  </script>
+</body>
+</html>
