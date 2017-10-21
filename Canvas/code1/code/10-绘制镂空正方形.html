@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas 绘制镂空正方形</title>
+
+
+
+</head>
+<body>
+    <!-- 1.准备一张纸（添加canvas标签） -->
+    <canvas></canvas>
+
+
+
+    <script>
+        // 2.获取纸（获取canvas元素）
+        var canvas = document.querySelector('canvas');
+
+        canvas.width = 600;
+        canvas.height = 300;
+        canvas.style.border = '1px solid #ff0000';
+
+        // 3.准备画笔
+        var context = canvas.getContext('2d');//给我准备一个画2d图像的画笔
+        
+        // 1
+
+        // // 先来画第一个长方形
+        // context.moveTo(100,50);
+        // context.lineTo(500,50);
+        // context.lineTo(500,250);
+        // context.lineTo(100,250);
+        // context.lineTo(100,50);
+        // context.stroke();
+
+        // // 这是非零（顺时针画）
+        // context.moveTo(200,100);
+        // context.lineTo(400,100);        
+        // context.lineTo(400,200);        
+        // context.lineTo(200,200);
+        // context.lineTo(200,100);
+        // context.stroke();
+        // // context.fill();
+
+
+        // 2
+
+        // // 先来画第一个长方形
+        // context.moveTo(100,50);
+        // context.lineTo(500,50);
+        // context.lineTo(500,250);
+        // context.lineTo(100,250);
+        // context.lineTo(100,50);
+        // context.stroke();
+
+        // // 这是零（逆时针画）里面的盒子
+        // context.moveTo(200,100);
+        // context.lineTo(200,200);
+        // context.lineTo(400,200);
+        // context.lineTo(400,100);
+        // context.lineTo(200,100);
+        // // context.stroke();
+        // context.fill();
+
+
+        // 问题：通过fill 来获取镂空的长方形框，通过代码可知，所有的线条都是顺时针连接的，所以没有得到镂空的图形
+        // 原因：因为 非零环绕原则（作用：判断某一个区域是否需要填充颜色）
+        // 注意事项：非零环绕原则只适用于一笔画成的图形
+        
+        
+
+
+
+
+        // 3
+        
+        // 做一个两笔画的，内外颜色不同（beginpath）
+        context.moveTo(100,50);
+        context.lineTo(500,50);
+        context.lineTo(500,250);
+        context.lineTo(100,250);
+        context.lineTo(100,50);
+        context.fillStyle = 'skyblue';        
+        context.fill();
+        
+
+        context.beginPath();
+        context.moveTo(200,100);
+        context.lineTo(200,200);
+        context.lineTo(400,200);
+        context.lineTo(400,100);
+        context.lineTo(200,100);
+        context.fillStyle = 'red';
+        context.fill();
+
+
+
+
+
+
+    </script>
+</body>
+</html>

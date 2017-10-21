@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>canvas 绘制正方形块</title>
+    <title>canvas 绘制三角形</title>
 
 
 </head>
@@ -25,21 +25,23 @@
         // 3.准备画笔
         var context = canvas.getContext('2d');//给我准备一个画2d图像的画笔
         
-        // 4.绘制正方形的框
-        context.moveTo(0,0);
-        context.lineTo(200,0);
-        context.lineTo(200,200);
-        context.lineTo(0,200);
-        context.lineTo(0,0);
-
         
-        // context.stroke();//描边 --- 把起始点和终止点连接 
+        context.moveTo(10,10);
+        context.lineTo(100,10);
+        context.lineTo(10,100);
+        // context.lineTo(0,0);
 
-        // fillStyle 填充样式
-        context.fillStyle = 'red';
+        // 闭合路径(图形):指的是把开始点和结束点连接起来
+        // 比如原来需要设置五个点，现在只需要设置四个点就可以了，最后一个点和第一个点连接
+        context.closePath();
 
-        // fill 填充
-        context.fill();
+        context.stroke();
+
+
+
+
+        // 在canvas画图中 每画一条线 都是一条路径
+        // 有的时候 路径没有闭合 
     </script>
 </body>
 </html>

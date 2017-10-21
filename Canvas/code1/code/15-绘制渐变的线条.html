@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>canvas 绘制正方形块</title>
+    <title>canvas 绘制渐变线条</title>
 
 
 </head>
 <body>
-    <!-- 1.准备一张纸（添加canvas标签） -->
+    <!-- 1.在html中添加画布元素 -->
     <canvas></canvas>
 
 
@@ -25,21 +25,21 @@
         // 3.准备画笔
         var context = canvas.getContext('2d');//给我准备一个画2d图像的画笔
         
-        // 4.绘制正方形的框
-        context.moveTo(0,0);
-        context.lineTo(200,0);
-        context.lineTo(200,200);
-        context.lineTo(0,200);
-        context.lineTo(0,0);
+
+        // 设置线宽
+        context.lineWidth = 10;
+        for(var i=0;i<256;i++){
+            context.beginPath();
+            context.moveTo(10+i,100);
+            context.lineTo(100+i,100);
+            context.strokeStyle = 'rgb(255,'+i+','+i+')';
+            context.stroke();
+        }
 
         
-        // context.stroke();//描边 --- 把起始点和终止点连接 
 
-        // fillStyle 填充样式
-        context.fillStyle = 'red';
 
-        // fill 填充
-        context.fill();
+
     </script>
 </body>
 </html>
