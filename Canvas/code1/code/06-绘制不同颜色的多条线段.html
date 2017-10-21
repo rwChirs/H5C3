@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas </title>
+
+
+</head>
+
+<!-- 问题：下面三条线所显示的样式，都是最后一条线设置的样式 -->
+<!-- 原因：
+    首先，搞清楚canvas 渲染图形，它是基于状态的，
+    所谓状态就是每一次用（stroke/fill）之类的API渲染图形的时候，canvas会检查整个程序定义的（strokeStyle，fillStyle，lineWidth等）
+    当一个状态值没有被改变时，canvas就一直用这个状态。
+    如果被改变，这里就要注意：
+    1.如果使用beginPath() 开始一个新的路径，则不同路径使用当前路径的值
+    2.如果没有使用beginPath() 开始一个新的路径，后面的会覆盖前面的 -->
+
+
+<body>
+    <!-- 1.准备一张纸（添加canvas标签） -->
+    <canvas></canvas>
+
+
+
+    <script>
+        // 2.获取纸（获取canvas元素）
+        var canvas = document.querySelector('canvas');
+
+        canvas.width = 600;
+        canvas.height = 300;
+        canvas.style.border = '1px solid #ff0000';
+
+        // 3.准备画笔
+        var context = canvas.getContext('2d');//给我准备一个画2d图像的画笔
+        
+        // 绘制第一条线
+        context.beginPath();
+
+        context.strokeStyle = 'red';
+
+        context.moveTo(100,50);
+        context.lineTo(200,50);
+        context.stroke();
+
+        // 绘制第二条线段
+        context.beginPath();        
+
+        context.strokeStyle = 'blue';
+        
+        context.moveTo(100,90);
+        context.lineTo(200,90);
+        context.stroke();
+        
+        // 绘制第三条线段
+        context.beginPath();
+        
+        context.strokeStyle = 'orange';
+
+        context.moveTo(100,130);
+        context.lineTo(200,130);
+
+        context.stroke();
+        
+
+        // canvas绘制图形是基于状态的，通过（strokestyle,lineWidth）一条线就是用的当前的样式
+
+
+
+
+    </script>
+</body>
+</html>
