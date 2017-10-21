@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>canvas </title>
+    <title>canvas绘制线段(直线) </title>
 
 
 </head>
@@ -40,6 +40,7 @@
         // context.beginPath();//第一个这个可以不写
 
         context.strokeStyle = 'red';
+        // context.lineWidth = 2;
 
         context.moveTo(100,50);
         context.lineTo(200,50);
@@ -49,6 +50,7 @@
         context.beginPath();        
 
         context.strokeStyle = 'blue';
+        // context.lineWidth = 2;
         
         context.moveTo(100,90);
         context.lineTo(200,90);
@@ -58,6 +60,7 @@
         context.beginPath();
         
         context.strokeStyle = 'orange';
+        // context.lineWidth = 2;
 
         context.moveTo(100,130);
         context.lineTo(200,130);
@@ -68,6 +71,7 @@
         // context.beginPath();
         
         // context.strokeStyle = 'pink';
+        // // context.lineWidth = 2;
 
         // context.moveTo(100,170);
         // context.lineTo(200,170);
@@ -78,13 +82,16 @@
 
         // bug： 有stroke（）只有一个 和开启beginPath（）的时候有问题
 
-        // 当线条设置不同颜色 如果没有设置线宽 要>=2 就会出现渲染的问题，既不是我们设置的也不是默认的
+        // 当线条设置不同颜色 如果没有设置线宽>=2 就会出现渲染的问题，既不是我们设置的也不是默认的
         // 第二种 就是统一最后使用一个stroke（）; 那么 如果进行颜色的设置 就会被后面的覆盖
 
 
 
         // 总结：如果用一个stroke 再开启一个新路径的画 就只会画出一条线，这是不对的
         // 应该的做法是 一个新路径 对应一个stroke  第一个（context.beginPath()）可以不写
+
+        // 其实在canvas绘图的时候 canvas对象本身就已经开启了一个新路径
+
 
 
     </script>

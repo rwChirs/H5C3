@@ -10,6 +10,8 @@
 
 </head>
 <body>
+    <img src="../images/feilinghuanraoyuanze.png" alt="">
+
     <!-- 1.准备一张纸（添加canvas标签） -->
     <canvas></canvas>
 
@@ -27,44 +29,44 @@
         var context = canvas.getContext('2d');//给我准备一个画2d图像的画笔
         
         // 1
+/*
+        // 先来画第一个长方形
+        context.moveTo(100,50);
+        context.lineTo(500,50);
+        context.lineTo(500,250);
+        context.lineTo(100,250);
+        context.lineTo(100,50);
+        context.stroke();
 
-        // // 先来画第一个长方形
-        // context.moveTo(100,50);
-        // context.lineTo(500,50);
-        // context.lineTo(500,250);
-        // context.lineTo(100,250);
-        // context.lineTo(100,50);
-        // context.stroke();
-
-        // // 这是非零（顺时针画）
-        // context.moveTo(200,100);
-        // context.lineTo(400,100);        
-        // context.lineTo(400,200);        
-        // context.lineTo(200,200);
-        // context.lineTo(200,100);
-        // context.stroke();
-        // // context.fill();
-
+        // 这是非零（顺时针画）
+        context.moveTo(200,100);
+        context.lineTo(400,100);        
+        context.lineTo(400,200);        
+        context.lineTo(200,200);
+        context.lineTo(200,100);
+        context.stroke();
+        // context.fill();
+*/
 
         // 2
+/*
+        // 先来画第一个长方形
+        context.moveTo(100,50);
+        context.lineTo(500,50);
+        context.lineTo(500,250);
+        context.lineTo(100,250);
+        context.lineTo(100,50);
+        context.stroke();
 
-        // // 先来画第一个长方形
-        // context.moveTo(100,50);
-        // context.lineTo(500,50);
-        // context.lineTo(500,250);
-        // context.lineTo(100,250);
-        // context.lineTo(100,50);
+        // 这是零（逆时针画）里面的盒子
+        context.moveTo(200,100);
+        context.lineTo(200,200);
+        context.lineTo(400,200);
+        context.lineTo(400,100);
+        context.lineTo(200,100);
         // context.stroke();
-
-        // // 这是零（逆时针画）里面的盒子
-        // context.moveTo(200,100);
-        // context.lineTo(200,200);
-        // context.lineTo(400,200);
-        // context.lineTo(400,100);
-        // context.lineTo(200,100);
-        // // context.stroke();
-        // context.fill();
-
+        context.fill();
+*/
 
         // 问题：通过fill 来获取镂空的长方形框，通过代码可知，所有的线条都是顺时针连接的，所以没有得到镂空的图形
         // 原因：因为 非零环绕原则（作用：判断某一个区域是否需要填充颜色）
@@ -76,7 +78,7 @@
 
 
         // 3
-        
+       
         // 做一个两笔画的，内外颜色不同（beginpath）
         context.moveTo(100,50);
         context.lineTo(500,50);

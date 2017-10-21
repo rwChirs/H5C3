@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>canvas绘制</title>
+  <title>canvas绘制折线图坐标轴</title>
   
 </head>
 
@@ -34,21 +34,23 @@
       var zeroY = canvas.height - space;
 
     // 6.画x轴
-    context.moveTo(zeroX,zeroY);
-    context.lineTo(canvas.width - space,zeroY);
-    context.lineTo(canvas.width - space - aWidth,canvas.height - space + aWidth/2 );
-    context.lineTo(canvas.width - space - aWidth,canvas.height - space - aWidth/2 );
-    context.lineTo(canvas.width - space,zeroY);
+    context.moveTo(zeroX, zeroY);
+    context.lineTo(canvas.width - space, zeroY);
+    // 小箭头
+    context.lineTo(canvas.width - space - aWidth, canvas.height - space + aWidth/2 );
+    context.lineTo(canvas.width - space - aWidth, canvas.height - space - aWidth/2 );
+    context.lineTo(canvas.width - space, zeroY);
     context.fill();
     context.stroke();
     
 
     // 7.画y轴
-    context.moveTo(zeroX,zeroY);
-    context.lineTo(zeroX,space);
-    context.lineTo(space + aWidth/2,space + aWidth);
-    context.lineTo(space - aWidth/2,space + aWidth);
-    context.lineTo(zeroX,space);
+    context.moveTo(zeroX, zeroY);
+    context.lineTo(zeroX, space);
+    
+    context.lineTo(space + aWidth/2, space + aWidth);
+    context.lineTo(space - aWidth/2, space + aWidth);
+    context.lineTo(zeroX, space);
     context.fill();    
     context.stroke();
 

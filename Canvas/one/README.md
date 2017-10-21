@@ -152,7 +152,8 @@
 
   > 开启路径
 
-    context.beginPath();
+    context.beginPath();  不是什么时候都用开启新路径的  而是要绘制不同的样式的样式的时候 才需要开启新路径
+    开启新路径是为了具体的设置不同图案的样式
 
   > 关闭路径
 
@@ -175,4 +176,9 @@
 
   > 清空矩形
 
-    context.cleartRect( x, y, width, height );
+    context.cleartRect( x, y, width, height ); 在该区域创建了一个透明的矩形而已，不能填充颜色
+## 绘制一条虚线
+
+  > 绘制虚线
+
+    context.setLineDash();
