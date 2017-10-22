@@ -829,10 +829,10 @@ body {
 }
 .loan .tab {
   width: 100%;
+  min-width: 570px;
   border-bottom: 1px solid #c6cbcf;
   overflow: hidden;
   padding-left: 15px;
-  min-width: 570px;
 }
 .loan .tab li {
   float: left;
@@ -900,7 +900,7 @@ body {
   height: 148px;
   padding: 10px 110px 10px 0;
   margin-bottom: 20px;
-  background-color: #FFF;
+  background-color: #fff;
   box-shadow: 2px 2px 2px #d8d8d8;
   box-sizing: border-box;
   border-radius: 3px;

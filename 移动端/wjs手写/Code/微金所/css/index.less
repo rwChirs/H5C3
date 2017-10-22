@@ -25,6 +25,7 @@ body {
   background-color: #ccc;
   border-bottom: 1px solid #ccc;
   z-index: 100;
+  
   transition: all 1s;
   
   .menu {
@@ -49,7 +50,9 @@ body {
 	height: 100%;
 	background: url(../images/info_left_bg.jpg);
   overflow: auto;
+
   transition: all 1s;
+
   transform: translateX(-100%);
 
 	dl {
@@ -103,6 +106,7 @@ body {
   transition: all 1s;
 }
 
+
 // 1.顶部导航
 .topnav {
   width: 100%;
@@ -111,7 +115,7 @@ body {
   background-color: @white;
 
   .container {
-    width: @smallWidth;
+    width: @smallWidth;//通用宽度
     margin: 0 auto;
     > div {
       float: left;
@@ -163,6 +167,7 @@ body {
 
 }
 
+
 // 导航
 .nav {
   width: 100%;
@@ -181,16 +186,19 @@ body {
   }
 
   li {
+    //不能给宽100%
     height:  @navHeight;
     float: left;
     position: relative;
+
     &:first-child {
       margin-right: 30px;
       a {
         padding: 0;
       }
     }
-    &:last-child {
+
+    &:last-child { //个人中心
       float: right;
       margin-right: @centerRight;
     }
@@ -204,6 +212,7 @@ body {
         color: #333;
       }
     }
+
   }
 
   a {
@@ -228,46 +237,49 @@ body {
 
   img {
     width: @navImgWidth;
-    vertical-align: middle;
+    vertical-align: middle; //有img就加上
   }
 }
 
 
 // 轮播图
+.carousel.swipe {
+  width: 100%;
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap { //ul
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > li { //li
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+.swipe-wrap > li > img {
+  width: 100%;
+  vertical-align: middle;
+}
+
 
   
-  .carousel.swipe {
-    width: 100%;
-    overflow: hidden;
-    visibility: hidden;
-    position: relative;
-  }
-  .swipe-wrap {
-    overflow: hidden;
-   position: relative;
-  }
-  .swipe-wrap > li {
-    float:left;
-    width:100%;
-    position: relative;
-  }
-
-  .swipe-wrap > li > img {
-    width: 100%;
-    vertical-align: middle;
-  }
-
 // 专长
 .expertise {
   padding: @exPadding;
+
   max-width: 1170px;
   width: 100%;
+
   margin: 0 auto;
   overflow: hidden;
   background-color: @white;
 
   dl {
     float: left;
+
     width: 33.333333%;
     padding:  0 15px;
   }
@@ -284,10 +296,11 @@ body {
 
   span {
     font-family: @exFontFamily;
-    font-size: 12px;
+    font-size: 12px;//因为字体太大了所以减小
     margin-right: 5px;
     color: @exColor;
   }
+
 }
 
 
@@ -308,7 +321,7 @@ body {
 
   li {
 
-    margin-bottom: 5px;
+    margin-bottom: 5px; //对应的下距离
 
     .num {
       color: @notifyColor;
@@ -324,19 +337,20 @@ body {
     }
 
     &:first-child {
-      margin-top: 5px;
+      margin-top: 5px;//对应的上距离
     }
     &:last-child {
       position: absolute;
       right: 15px;
       top:0;
-
-      
+  
       img {
         height: @notifyImgHeight;
         width: auto;
       }
+
     }
+
   }
 }
 
@@ -360,13 +374,15 @@ body {
     height: @tabsHeight;
   }
 
+  // tab栏
   .tab {
     width: 100%;
+    min-width: 570px;
+
     border-bottom: 1px solid @topBorderColor;
     overflow: hidden;
     padding-left: 15px;
-    min-width: 570px;
-
+    
     li {
       float:left;
       padding: 6px 18px;
@@ -384,7 +400,7 @@ body {
       padding-bottom: 8px;
     }
 
-    b {
+    b { //下划线
       display: none;
       position: absolute;
       left: 0;
@@ -395,8 +411,10 @@ body {
     }
   }
 
+  // 介绍
   .intro {
     margin-top: 15px;
+
     width: 100%;
     height: 40px;
     line-height: 40px;
@@ -407,7 +425,7 @@ body {
     border-radius: 3px;
     position: relative;
 
-    &:before {
+    &:before { //制作并定位小角
       content: '';
       position: absolute;
       top: -8px;
@@ -418,54 +436,54 @@ body {
     }
   }
 
+  // 卡片
   .items {
     width: 100%;
     padding: 10px 0;
     text-align: justify;
 
-    &:after {
+    &:after { //运用小技巧
       content: '';
       display: inline-block;
       width: 100%;
       overflow: hidden;
     }
 
-    .blank {
+    .blank { //为了实现以上两端对齐效果，需要添加一个空div占位置
       display: inline-block;
       width: 31.5%;
       overflow: hidden;
     }
 
-    .item {
+    .item { //每一张卡片
       display: inline-block;
       width: 31.5%;
       height: 148px;
       padding: 10px 110px 10px 0;
 
       margin-bottom: 20px;
-      background-color: #FFF;
+      background-color: @white;
       box-shadow: 2px 2px 2px #d8d8d8;
       box-sizing: border-box;
       border-radius: 3px;
       position: relative;
-     &.manbiao {
-       background-color: #e2dfdf;
 
-       .item-left {
-         background-image: url("../images/loan-status-5.png");
-         background-position: 132px center;
-         background-repeat: no-repeat;
-         background-size: auto 72%;
-       }
-     }
+      &.manbiao {
+       background-color: #e2dfdf;
+        .item-left {
+          background-image: url("../images/loan-status-5.png");
+          background-position: 132px center;
+          background-repeat: no-repeat;
+          background-size: auto 72%;
+        }
+      }
+
     }
 
-    .item-left {
+    .item-left { //卡片左项目
       width: 100%;
       height: 100%;
-      padding:5px 15px;
-    
-      
+      padding:5px 15px;   
 
       dl {
         width: 100%;
@@ -479,28 +497,29 @@ body {
 
       dd {
         overflow: hidden;
-        margin-bottom: 10px;
+        margin-bottom: 10px;//拉开距离
+
         &:nth-child(2n) {
           font-size: 12px;
           color: #999;
-          
         }
         &:nth-child(2n+1) {
           font-size: 18px;
           color: #333;
-          
         }
+        
       }
 
       span.l {
         float: left;
       }
-
       span.r {
         float: right;
       }
+
     }
-    .item-right {
+
+    .item-right { //卡片右项目
       position: absolute;
       top:0;
       right:0;
@@ -508,6 +527,7 @@ body {
       height: 100%;
       border-left: 1px dashed #333;
 
+      // 在原有虚线上 做上下半圆
       &:before,&:after {
         position: absolute;
         content: "";
@@ -518,16 +538,15 @@ body {
         background-color: #f0f0f0;
         border-radius: 6px;
       }
-
       &:before {
         top: -6px;
       }
-
       &:after {
         top: auto;
         bottom: -6px;
         box-shadow: 0 2px 2px #d8d8d8 inset;
       }
+
 
       .font {
         width: 100%;
@@ -579,6 +598,7 @@ body {
         color: #ccc;
       }
     }
+
   }
 
 }
@@ -591,6 +611,7 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
   overflow: hidden;
+
   padding-bottom: 20px;
 
   .title {
@@ -620,7 +641,7 @@ body {
     position: relative;
  
 
-    &:before {
+    &:before { //做虚线
       content:'';
       position: absolute;
       top: 0;
@@ -630,6 +651,7 @@ body {
       border-left: 1px dashed #666;
     }
 
+    // 圆
     span {
       position: relative;
       display: block;
@@ -676,7 +698,7 @@ body {
     ul {
       width: 100%;
       text-align: center;
-      font-size: 0;
+      font-size: 0; //解决行内块问题
     }
     
     li {
@@ -685,15 +707,21 @@ body {
       vertical-align: middle;
       line-height: 1;
       padding: 12px 0;
+      
       margin: 0 4px;
 
+      // 应该把倒数后四个都消除margin
       &:nth-last-child(-n+4){
         margin: 0;
       }
+
     }
+    // 如果span给了padding之后，它两边都会多，给一边也不行
+    // 所以找到这几个li中有span的索引，把margin给消除，再加到span中
     span {
       margin: 0 2px;
     }
+
   }
 
   .copyright {
@@ -722,13 +750,14 @@ body {
     }
   
   }
+
 }
 
 
-
-// 调节响应式
+// 本页面的主要部分及目的代码
+// 调节响应式（这个屏幕大小的时候哪些发生改变）
 @media screen and (max-width: 980px) {
-  // 顶部导航
+  // 顶部导航（第一次拿多一点，为了方便理解，其实是改谁就拿谁）
   .topnav {
     width: 100%;
     border: 1px solid @topBorderColor;
@@ -747,7 +776,7 @@ body {
         font-size: 12px;
         color: #666;
 
-        &.service {
+        &.service { //x
           border-left:none;
         }
   
@@ -765,7 +794,7 @@ body {
   
     }
   
-    .qrcode {
+    .qrcode { //x
       display: none;
       width: @qrcodeWidth;
     }
@@ -793,8 +822,7 @@ body {
       }
     }
   
-  }
-  
+  }  
 
   // 导航
 
@@ -815,22 +843,22 @@ body {
   }
 
   //  专长
- .expertise {
-  width: 750px;
-}
+  .expertise {
+    width: 750px;
+  }
 
 
-//  通知
-.notify {
-  ul {
-      width: 750px;
-      margin: 0 auto;
-    }
-  
-    li:last-child {
-      display: none;
-    }
-   
+  //  通知
+  .notify {
+    ul {
+        width: 750px;
+        margin: 0 auto;
+      }
+    
+      li:last-child {
+        display: none;
+      }
+    
   }
 
 
@@ -850,52 +878,52 @@ body {
 
 
 
-//  新闻
+  //  新闻
 
-.news {
-  padding-left: 20px;
-  padding-right: 20px;
-  .title {
-    float: none;
-    width: 100%;
-    padding: @titlePadding;
-    margin-left: 0px;
-    border-bottom: 1px solid #ccc;
-    position: relative;
-    font-weight: normal;
-  }
-
-  .type {
-    float: none;
-    padding: 25px 0;
-
-    text-align: justify;
-    &:before {
-      display: none;
-    }
-    &:after {
-      content:'';
-      display: inline-block;
+  .news {
+    padding-left: 20px;
+    padding-right: 20px;
+    .title {
+      float: none;
       width: 100%;
-      overflow: hidden;
+      padding: @titlePadding;
+      margin-left: 0px;
+      border-bottom: 1px solid #ccc;
+      position: relative;
+      font-weight: normal;
     }
-    span {
-      display: inline-block;
-      margin-bottom: 0;
-      // margin: 35px 0;
+
+    .type {
+      float: none;
+      padding: 25px 0;
+
+      text-align: justify;
+      &:before {
+        display: none;
+      }
+      &:after {
+        content:'';
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
+      }
+      span {
+        display: inline-block;
+        margin-bottom: 0;
+        // margin: 35px 0;
+      }
+    }
+
+    .list {
+      float: none;
+      margin-left: 0px;
     }
   }
 
-  .list {
-    float: none;
-    margin-left: 0px;
-  }
+
+
+
 }
-
-
-
-
- }
 
 
 
@@ -934,5 +962,6 @@ body {
   .fixed-pullright {
     transform: translateX(240px);
   }
- }
+
+}
 
