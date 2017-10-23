@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>设置文字的属性</title>
+</head>
+<body>
+    <canvas></canvas>
+
+
+    <script>
+        var canvas = document.querySelector('canvas');
+            canvas.width = 600;
+            canvas.height = 400;
+            canvas.style.border  = '1px solid #ff0000';
+        var context = canvas.getContext('2d');
+
+        // 画横线
+        context.beginPath();
+        context.moveTo(0,canvas.height/2);
+        context.lineTo(canvas.width,canvas.height/2);
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(canvas.width/2,0);
+        context.lineTo(canvas.width/2,canvas.height);
+        context.stroke();
+
+
+
+        // 绘制文字
+        var text = '揉进我眼眶';
+
+
+        // 1.修改文字的大小以及字体
+        context.font = '40px Microsoft YaHei';
+
+
+        // 2.修改文字的水平对齐方式
+        // context.textAlign = 'left'; //默认
+        // context.textAlign = 'right'; // 以右边为基准点绘制
+        context.textAlign = 'center'; // 以中间作为基准点绘制
+        // context.textAlign = 'start';
+        // context.textAlign = 'end';
+
+
+        // 3.修改文字的垂直对齐方式
+        // context.textBaseline 设置基线
+        // context.textBaseline = 'top';
+        // context.textBaseline = 'bottom';
+        // context.textBaseline = 'middle';
+        // context.textBaseline = 'alphabetic';
+
+
+        // 4.获取文字的宽度
+        // var width = context.measureText(文字的内容).width;
+        var width = context.measureText(text).width;        
+        console.log(width);
+
+
+        // 5.填充文字
+        // context.fillText(文字的内容,文字左下角的X坐标,文字左下角的Y坐标);
+        context.fillText(text, canvas.width/2, canvas.height/2);
+        // context.fillText('揉进我眼睛',0,0);
+        
+        
+       
+
+
+
+
+
+
+
+        
+    
+    </script>
+</body>
+</html>
